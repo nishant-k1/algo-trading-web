@@ -7,6 +7,7 @@ import Settings from "./pages/Settings";
 import SignIn from "./pages/SignIn";
 import Strategies from "./pages/Strategies";
 import Watchlists from "./pages/Watchlists";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="watchlists" element={<Watchlists />} />
         <Route path="strategies" element={<Strategies />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
