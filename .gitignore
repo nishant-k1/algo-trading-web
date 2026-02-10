@@ -1,0 +1,29 @@
+# Env and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Dependencies
+node_modules/
+
+# Build and output
+dist/
+coverage/
+*.local
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+*.log
+
+# Vite / TypeScript
+*.local
+*.tsbuildinfo

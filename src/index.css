@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* 915 by Groww–style trading terminal theme: dark, green accent, trading red/green */
+@theme {
+  /* Terminal dark backgrounds */
+  --color-terminal-bg: #0c0e12;
+  --color-terminal-surface: #13161c;
+  --color-terminal-panel: #1a1d26;
+  --color-terminal-border: #252d38;
+  /* Groww green accent */
+  --color-groww: #00d09c;
+  --color-groww-hover: #00b386;
+  /* Trading convention */
+  --color-profit: #00d09c;
+  --color-loss: #f23645;
+  /* Text */
+  --color-terminal-fg: #e6e8ec;
+  --color-terminal-muted: #8b929a;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-terminal-fg);
+    background: var(--color-terminal-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  a {
+    color: var(--color-groww);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: var(--color-groww-hover);
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  input,
+  select,
+  textarea,
+  button,
+  [type="button"],
+  [type="submit"],
+  [role="button"] {
+    cursor: pointer;
+  }
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggest-dropdown {
+  animation: dropdown-in 0.2s ease-out;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-terminal-border);
+}
+
+/* Shared select/dropdown form control */
+select.select-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%238b929a' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 4.5 L6 7.5 L9 4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+select.select-input:hover:not(:disabled) {
+  border-color: var(--color-groww);
+}
+select.select-input:focus {
+  border-color: var(--color-groww);
+  outline: none;
+}
+select.select-input option {
+  background: var(--color-terminal-panel);
+  color: var(--color-terminal-fg);
+}

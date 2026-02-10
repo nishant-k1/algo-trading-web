@@ -1,0 +1,258 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Settings > matches snapshot when loaded 1`] = `
+<div>
+  <div>
+    <h1
+      class="text-xl font-semibold text-terminal-fg mt-0 mb-2"
+    >
+      Settings
+    </h1>
+    <section
+      class="rounded-lg border border-terminal-border bg-terminal-panel p-4 mb-6"
+    >
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Broker
+      </h2>
+      <div
+        class="flex flex-wrap items-center gap-3"
+      >
+        <div
+          aria-label="Select broker"
+          class="flex flex-wrap gap-2"
+          role="listbox"
+        >
+          <button
+            aria-selected="true"
+            class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 bg-groww text-terminal-bg"
+            role="option"
+            type="button"
+          >
+            Zerodha
+          </button>
+          <button
+            aria-selected="false"
+            class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 bg-terminal-surface border border-terminal-border text-terminal-fg hover:border-groww/50 hover:text-groww"
+            role="option"
+            type="button"
+          >
+            Groww
+          </button>
+        </div>
+        <button
+          class="px-3 py-2 rounded text-sm font-medium bg-terminal-surface border border-terminal-border text-terminal-fg hover:bg-terminal-border hover:text-groww transition-colors"
+          type="button"
+        >
+          Test connection
+        </button>
+      </div>
+      <div
+        class="mt-4"
+      >
+        <p
+          class="text-terminal-muted text-sm mb-2"
+        >
+          Broker tokens (paste and save)
+        </p>
+        <div
+          class="flex flex-col gap-2 max-w-md"
+        >
+          <label
+            class="text-terminal-fg text-sm"
+          >
+            Zerodha access token:
+             
+            <input
+              class="w-full mt-1 px-3 py-2 rounded border border-terminal-border bg-terminal-surface text-terminal-fg placeholder-terminal-muted focus:outline-none focus:ring-2 focus:ring-groww/50"
+              placeholder="Paste token from Kite"
+              type="password"
+              value=""
+            />
+          </label>
+          <label
+            class="text-terminal-fg text-sm"
+          >
+            Groww access token:
+             
+            <input
+              class="w-full mt-1 px-3 py-2 rounded border border-terminal-border bg-terminal-surface text-terminal-fg placeholder-terminal-muted focus:outline-none focus:ring-2 focus:ring-groww/50"
+              placeholder="Use Test connection to refresh"
+              type="password"
+              value=""
+            />
+          </label>
+          <button
+            class="px-3 py-2 rounded text-sm font-medium bg-groww text-terminal-bg hover:bg-groww-hover disabled:opacity-60 w-fit transition-colors"
+            type="button"
+          >
+            Save tokens
+          </button>
+        </div>
+      </div>
+    </section>
+    <section
+      class="rounded-lg border border-terminal-border bg-terminal-panel p-4 mb-6"
+    >
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Paper / Live
+      </h2>
+      <div
+        aria-label="Paper or Live trading"
+        class="flex flex-wrap gap-2"
+        role="listbox"
+      >
+        <button
+          aria-selected="true"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 bg-groww text-terminal-bg"
+          role="option"
+          type="button"
+        >
+          Paper
+        </button>
+        <button
+          aria-selected="false"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 bg-terminal-surface border border-terminal-border text-terminal-fg hover:border-groww/50 hover:text-groww"
+          role="option"
+          type="button"
+        >
+          Live
+        </button>
+      </div>
+      <p
+        class="mt-2 text-terminal-muted text-sm"
+      >
+        Paper: simulated orders. Live: real broker orders.
+      </p>
+    </section>
+    <section
+      class="rounded-lg border border-terminal-border bg-terminal-panel p-4 mb-6"
+    >
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Trading type
+      </h2>
+      <div
+        class="relative inline-block min-w-[200px]"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Trading type"
+          class="flex items-center justify-between gap-2 px-3 py-2 rounded border text-left text-sm min-w-[140px] transition-colors border-terminal-border bg-terminal-surface text-terminal-fg hover:border-groww/50 focus:outline-none focus:ring-2 focus:ring-groww/50 text-terminal-muted"
+          type="button"
+        >
+          <span
+            class="truncate"
+          >
+            — Select —
+          </span>
+          <span
+            aria-hidden="true"
+            class="shrink-0 transition-transform duration-200 "
+          >
+            <svg
+              fill="none"
+              height="12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+              viewBox="0 0 12 12"
+              width="12"
+            >
+              <path
+                d="M3 4.5 L6 7.5 L9 4.5"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <p
+        class="mt-2 text-terminal-muted text-sm"
+      >
+        Intraday (MIS), Swing/Positional (CNC), F&O (NRML).
+      </p>
+    </section>
+    <section
+      class="rounded-lg border border-terminal-border bg-terminal-panel p-4 mb-6"
+    >
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Risk limits
+      </h2>
+      <div
+        class="flex flex-wrap gap-3 items-center"
+      >
+        <label
+          class="text-terminal-fg text-sm"
+        >
+          Max position (₹):
+           
+          <input
+            class="w-28 ml-1 px-2 py-1.5 rounded border border-terminal-border bg-terminal-surface text-terminal-fg text-sm focus:outline-none focus:ring-2 focus:ring-groww/50"
+            min="0"
+            type="number"
+            value=""
+          />
+        </label>
+        <label
+          class="text-terminal-fg text-sm"
+        >
+          Max orders/day:
+           
+          <input
+            class="w-20 ml-1 px-2 py-1.5 rounded border border-terminal-border bg-terminal-surface text-terminal-fg text-sm focus:outline-none focus:ring-2 focus:ring-groww/50"
+            min="0"
+            type="number"
+            value=""
+          />
+        </label>
+        <label
+          class="text-terminal-fg text-sm"
+        >
+          Daily loss limit (%):
+           
+          <input
+            class="w-20 ml-1 px-2 py-1.5 rounded border border-terminal-border bg-terminal-surface text-terminal-fg text-sm focus:outline-none focus:ring-2 focus:ring-groww/50"
+            min="0"
+            step="0.5"
+            type="number"
+            value=""
+          />
+        </label>
+        <button
+          class="px-3 py-2 rounded text-sm font-medium bg-groww text-terminal-bg hover:bg-groww-hover disabled:opacity-60 transition-colors"
+          type="button"
+        >
+          Save limits
+        </button>
+      </div>
+    </section>
+    <section
+      class="rounded-lg border border-terminal-border bg-terminal-panel p-4"
+    >
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Kill switch
+      </h2>
+      <button
+        class="px-4 py-2 rounded font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-terminal-bg disabled:opacity-60 transition-colors bg-profit hover:bg-groww-hover"
+        type="button"
+      >
+        Kill switch OFF
+      </button>
+      <p
+        class="mt-2 text-terminal-muted text-sm"
+      >
+        When ON, new orders are rejected until you turn it off.
+      </p>
+    </section>
+  </div>
+</div>
+`;

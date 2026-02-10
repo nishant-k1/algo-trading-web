@@ -1,0 +1,243 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dashboard > matches snapshot when loaded 1`] = `
+<div>
+  <div>
+    <h1
+      class="text-xl font-semibold text-terminal-fg mt-0 mb-2"
+    >
+      Dashboard
+    </h1>
+    <section
+      class="flex flex-wrap gap-3 mb-6"
+    >
+      <div
+        class="min-w-[140px] rounded-lg border border-terminal-border bg-terminal-panel p-4"
+      >
+        <div
+          class="text-terminal-muted text-xs uppercase tracking-wide mb-1"
+        >
+          Mode
+        </div>
+        <div
+          class="font-semibold text-terminal-fg"
+        >
+          Paper
+        </div>
+      </div>
+      <div
+        class="min-w-[140px] rounded-lg border border-terminal-border bg-terminal-panel p-4"
+      >
+        <div
+          class="text-terminal-muted text-xs uppercase tracking-wide mb-1"
+        >
+          Kill switch
+        </div>
+        <div
+          class="font-semibold text-profit"
+        >
+          OFF
+        </div>
+      </div>
+      <div
+        class="rounded-lg border border-terminal-border bg-terminal-panel p-4"
+      >
+        <button
+          class="px-3 py-1.5 rounded text-sm font-medium bg-terminal-surface border border-terminal-border text-terminal-fg hover:bg-terminal-border hover:text-groww transition-colors"
+          type="button"
+        >
+          Test connection
+        </button>
+      </div>
+      <div
+        class="rounded-lg border border-terminal-border bg-terminal-panel p-4 self-start"
+      >
+        <button
+          class="px-3 py-1.5 rounded text-sm font-medium bg-terminal-surface border border-terminal-border text-terminal-fg hover:bg-terminal-border hover:text-groww transition-colors"
+          type="button"
+        >
+          Refresh
+        </button>
+      </div>
+      <div
+        class="rounded-lg border border-terminal-border bg-terminal-panel p-4 self-start"
+      >
+        <a
+          class="font-semibold text-groww hover:text-groww-hover"
+          href="/strategies"
+        >
+          Strategies →
+        </a>
+        <p
+          class="mt-1 text-terminal-muted text-xs"
+        >
+          Run scans, view signals
+        </p>
+      </div>
+      <div
+        class="min-w-[200px] rounded-lg border border-terminal-border bg-terminal-panel p-4"
+      >
+        <div
+          class="text-terminal-muted text-xs uppercase tracking-wide mb-1"
+        >
+          Last strategy run
+        </div>
+        <div
+          class="font-semibold text-terminal-fg"
+        >
+          2
+           signals
+        </div>
+        <div
+          class="text-terminal-muted text-xs mt-1"
+        >
+          1/15/2025, 3:30:00 PM
+        </div>
+        <div
+          class="text-terminal-muted text-xs mt-0.5"
+        >
+          Scanned: 
+          10
+           · Gap filtered:
+           
+          1
+        </div>
+        <button
+          class="mt-2 px-2.5 py-1 rounded text-xs font-medium bg-groww text-terminal-bg hover:bg-groww-hover disabled:opacity-60 transition-colors"
+          type="button"
+        >
+          Run again
+        </button>
+      </div>
+    </section>
+    <section
+      class="mb-6"
+    >
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Positions
+      </h2>
+      <div
+        class="overflow-x-auto rounded-lg border border-terminal-border"
+      >
+        <table
+          class="w-full border-collapse text-sm"
+        >
+          <thead>
+            <tr
+              class="border-b border-terminal-border bg-terminal-surface"
+            >
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Symbol
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Exchange
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Side
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Qty
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Avg price
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Product
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="bg-terminal-panel"
+          >
+            <tr>
+              <td
+                class="py-3 px-3 text-terminal-muted text-sm"
+                colspan="6"
+              >
+                No positions
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2
+        class="text-sm font-semibold text-terminal-fg mb-2"
+      >
+        Recent orders
+      </h2>
+      <div
+        class="overflow-x-auto rounded-lg border border-terminal-border"
+      >
+        <table
+          class="w-full border-collapse text-sm"
+        >
+          <thead>
+            <tr
+              class="border-b border-terminal-border bg-terminal-surface"
+            >
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Time
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Symbol
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Side
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Qty
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Status
+              </th>
+              <th
+                class="text-left py-2 px-3 text-terminal-muted font-medium"
+              >
+                Avg price
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="bg-terminal-panel"
+          >
+            <tr>
+              <td
+                class="py-3 px-3 text-terminal-muted text-sm"
+                colspan="6"
+              >
+                No orders
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>
+`;
