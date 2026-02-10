@@ -14,7 +14,6 @@ export default function SignIn() {
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
-    formData.set("username", "user");
     try {
       const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
@@ -41,14 +40,29 @@ export default function SignIn() {
         <h1 className="text-xl font-semibold text-terminal-fg mt-0 mb-4">Sign in</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
+            <label htmlFor="username" className="block text-terminal-muted text-sm mb-2">
+              Email or username
+            </label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autoComplete="username"
+              data-testid="signin-username"
+              className="w-full px-3 py-2 rounded border border-terminal-border bg-terminal-panel text-terminal-fg placeholder-terminal-muted focus:outline-none focus:ring-2 focus:ring-groww/50 focus:border-groww"
+              placeholder="user"
+            />
+          </div>
+          <div className="mb-4">
             <label htmlFor="password" className="block text-terminal-muted text-sm mb-2">
-              Password (any for single-user)
+              Password
             </label>
             <input
               id="password"
               name="password"
               type="password"
               autoComplete="current-password"
+              data-testid="signin-password"
               className="w-full px-3 py-2 rounded border border-terminal-border bg-terminal-panel text-terminal-fg placeholder-terminal-muted focus:outline-none focus:ring-2 focus:ring-groww/50 focus:border-groww"
               placeholder="••••••••"
             />

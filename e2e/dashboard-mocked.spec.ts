@@ -3,6 +3,16 @@ import { loginAsUser } from "./auth";
 
 test.describe("Dashboard with mocked API", () => {
   test.beforeEach(async ({ page }) => {
+    await page.route("**/api/auth/login", (route) => {
+      if (route.request().method() === "POST") {
+        return route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify({ access_token: "fake-token" }),
+        });
+      }
+      return route.continue();
+    });
     await page.route("**/api/dashboard**", (route) => {
       if (route.request().url().includes("dashboard") && !route.request().url().includes("pnl")) {
         return route.fulfill({

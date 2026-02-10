@@ -3,12 +3,32 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/** SPA fallback for preview: serve index.html for non-asset routes (so /signin etc. work in e2e). */
+function spaFallbackPreview(): import("vite").Plugin {
+  return {
+    name: "spa-fallback-preview",
+    configurePreviewServer(server) {
+      server.middlewares.use((req: import("http").IncomingMessage, res: import("http").ServerResponse, next: () => void) => {
+        if (req.method !== "GET") return next();
+        const url = (req.url ?? "/").split("?")[0];
+        if (url.startsWith("/assets/") || path.extname(url).length > 0) return next();
+        const index = path.join(__dirname, "dist", "index.html");
+        if (!fs.existsSync(index)) return next();
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/html");
+        res.end(fs.readFileSync(index, "utf-8"));
+      });
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), spaFallbackPreview()],
   test: {
     environment: "jsdom",
     setupFiles: ["./src/test/setup.ts"],

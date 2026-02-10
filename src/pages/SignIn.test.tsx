@@ -25,6 +25,7 @@ describe("SignIn", () => {
   it("renders sign in form", () => {
     renderSignIn();
     expect(screen.getByRole("heading", { name: /sign in/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/email or username/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /sign in/i })).toBeInTheDocument();
   });
@@ -36,6 +37,7 @@ describe("SignIn", () => {
       json: () => Promise.resolve({ detail: "Invalid credentials" }),
     });
     renderSignIn();
+    await user.type(screen.getByLabelText(/email or username/i), "user");
     await user.type(screen.getByLabelText(/password/i), "wrong");
     await user.click(screen.getByRole("button", { name: /sign in/i }));
     await waitFor(() => {
@@ -50,6 +52,7 @@ describe("SignIn", () => {
       json: () => Promise.resolve({ access_token: "jwt-here" }),
     });
     renderSignIn();
+    await user.type(screen.getByLabelText(/email or username/i), "user");
     await user.type(screen.getByLabelText(/password/i), "any");
     await user.click(screen.getByRole("button", { name: /sign in/i }));
     await waitFor(() => {

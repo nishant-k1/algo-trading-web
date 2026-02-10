@@ -11,9 +11,11 @@ test.describe("Sign in", () => {
   test("shows sign in form and can log in", async ({ page }) => {
     await page.goto("/signin");
     await expect(page.getByRole("heading", { name: /sign in/i })).toBeVisible();
-    await expect(page.getByLabel(/password/i)).toBeVisible();
+    await expect(page.getByTestId("signin-username")).toBeVisible();
+    await expect(page.getByTestId("signin-password")).toBeVisible();
 
-    await page.getByLabel(/password/i).fill("any");
+    await page.getByTestId("signin-username").fill("user");
+    await page.getByTestId("signin-password").fill("any");
     await page.getByRole("button", { name: /sign in/i }).click();
 
     await expect(page).toHaveURL(/\/dashboard/);
@@ -30,7 +32,8 @@ test.describe("Sign in", () => {
       route.fulfill({ status: 401, body: JSON.stringify({ detail: "Invalid credentials" }) })
     );
     await page.goto("/signin");
-    await page.getByLabel(/password/i).fill("any");
+    await page.getByTestId("signin-username").fill("user");
+    await page.getByTestId("signin-password").fill("any");
     await page.getByRole("button", { name: /sign in/i }).click();
     await expect(page.getByText(/invalid credentials/i)).toBeVisible({ timeout: 5000 });
     await expect(page).toHaveURL(/signin/);
