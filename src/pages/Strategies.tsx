@@ -12,6 +12,7 @@ import {
 } from "../api/strategies";
 import { listWatchlists } from "../api/watchlists";
 import { CustomSelect } from "../components/ui/CustomSelect";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 export default function Strategies() {
   const [strategies, setStrategies] = useState<StrategyOption[]>([]);
@@ -92,12 +93,7 @@ export default function Strategies() {
   };
 
   if (loading) {
-    return (
-      <div>
-        <h1 className="text-xl font-semibold text-terminal-fg mt-0">Strategies</h1>
-        <p className="text-terminal-muted">Loading…</p>
-      </div>
-    );
+    return <LoadingSpinner label="Loading strategies" />;
   }
 
   return (

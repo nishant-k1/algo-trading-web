@@ -9,6 +9,7 @@ import {
   type WatchlistResponse,
 } from "../api/watchlists";
 import { suggestInstruments, type InstrumentSuggestion } from "../api/instruments";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 const SUGGEST_DEBOUNCE_MS = 300;
 
@@ -132,12 +133,7 @@ export default function Watchlists() {
   };
 
   if (loading && watchlists.length === 0) {
-    return (
-      <div>
-        <h1 className="text-xl font-semibold text-terminal-fg mt-0">Watchlists</h1>
-        <p className="text-terminal-muted">Loading watchlists…</p>
-      </div>
-    );
+    return <LoadingSpinner label="Loading watchlists" />;
   }
 
   return (

@@ -8,6 +8,7 @@ import {
 } from "../api/dashboard";
 import { runStrategy } from "../api/strategies";
 import { testConnection } from "../api/settings";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 export default function Dashboard() {
   const [summary, setSummary] = useState<DashboardSummary | null>(null);
@@ -57,12 +58,7 @@ export default function Dashboard() {
   };
 
   if (loading || !summary) {
-    return (
-      <div>
-        <h1 className="text-xl font-semibold text-terminal-fg mt-0 mb-2">Dashboard</h1>
-        <p className="text-terminal-muted">Loading…</p>
-      </div>
-    );
+    return <LoadingSpinner label="Loading dashboard" />;
   }
 
   return (

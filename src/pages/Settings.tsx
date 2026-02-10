@@ -10,6 +10,7 @@ import {
 } from "../api/settings";
 import { ChoicePills } from "../components/ui/ChoicePills";
 import { CustomSelect } from "../components/ui/CustomSelect";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 export default function Settings() {
   const [settings, setSettings] = useState<SettingsResponse | null>(null);
@@ -131,12 +132,7 @@ export default function Settings() {
   };
 
   if (loading || !settings) {
-    return (
-      <div>
-        <h1 className="text-xl font-semibold text-terminal-fg mt-0">Settings</h1>
-        <p className="text-terminal-muted">Loading settings…</p>
-      </div>
-    );
+    return <LoadingSpinner label="Loading settings" />;
   }
 
   return (

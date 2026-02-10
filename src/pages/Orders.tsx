@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { listOrders, cancelOrderPaper, cancelOrderLive, type OrderRow } from "../api/orders";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 function formatTime(s: string | null) {
   if (!s) return "—";
@@ -51,12 +52,7 @@ export default function Orders() {
       : orders.filter((o) => o.status.toLowerCase().includes(statusFilter.toLowerCase()));
 
   if (loading) {
-    return (
-      <div>
-        <h1 className="text-xl font-semibold text-terminal-fg mt-0">Orders</h1>
-        <p className="text-terminal-muted">Loading orders…</p>
-      </div>
-    );
+    return <LoadingSpinner label="Loading orders" />;
   }
 
   return (
