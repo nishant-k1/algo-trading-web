@@ -29,14 +29,14 @@ export default function Header() {
 
   return (
     <header className="bg-terminal-surface border-b border-terminal-border">
-      <div className="max-w-6xl mx-auto w-full px-4 md:px-5 py-3 flex items-center gap-6 flex-wrap">
+      <div className="max-w-6xl mx-auto w-full px-4 md:px-5 py-3 flex items-center gap-4 min-w-0">
         <Link
           to="/dashboard"
-          className="text-terminal-fg font-semibold text-base hover:text-groww no-underline hover:no-underline transition-colors"
+          className="shrink-0 text-terminal-fg font-semibold text-base hover:text-groww no-underline hover:no-underline transition-colors"
         >
           Algo Trading
         </Link>
-        <nav className="flex items-center gap-1">
+        <nav className="flex items-center gap-1 min-w-0 flex-1 overflow-x-auto">
           {navLink("/dashboard", "Dashboard")}
           {navLink("/orders", "Orders")}
           {navLink("/screener", "Screener")}
@@ -44,16 +44,15 @@ export default function Header() {
           {navLink("/strategies", "Strategies")}
           {navLink("/settings", "Settings")}
           {navLink("/profile", "Profile")}
-        </nav>
-        <div className="ml-auto flex items-center gap-3">
+          <span className="ml-auto shrink-0" />
           <button
             type="button"
             onClick={handleLogout}
-            className="px-3 py-1.5 rounded text-sm font-medium border border-terminal-border bg-terminal-panel text-terminal-fg hover:bg-loss/10 hover:text-loss transition-colors"
+            className="shrink-0 px-2 py-1.5 rounded text-sm font-medium text-terminal-fg/90 hover:text-groww hover:bg-terminal-panel/50 border border-terminal-border/50 transition-colors"
           >
             Logout
           </button>
-        </div>
+        </nav>
       </div>
     </header>
   );
